@@ -1,0 +1,6 @@
+vlans:
+        - vlanid: 30
+          name: web
+        - vlanid: 40
+          name: database
+

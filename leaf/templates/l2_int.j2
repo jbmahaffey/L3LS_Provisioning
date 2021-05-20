@@ -1,0 +1,6 @@
+{% for int in l2_interfaces %}
+interface {{ int.name }}
+	switchport access vlan {{ int.vlan }}
+	description {{ int.description }}
+	no shutdown
+{% endfor %}

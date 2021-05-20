@@ -3,20 +3,30 @@
 #
 - name: Configure NTP
   eos_config:
-    src: ntp.j2
-    provider: "{{ eos_api }}"
+          src: ntp.j2
+          provider: "{{ eos_api }}"
 
 - name: Configure loopback 
   eos_config:
-    src: loopback.j2
-    provider: "{{ eos_api }}"
+          src: loopback.j2
+          provider: "{{ eos_api }}"
 
 - name: Configure IP interfaces
   eos_config:
-    src: ip_int.yml 
-    provider: "{{ eos_api }}"
+          src: ip_int.yml 
+          provider: "{{ eos_api }}"
 
 - name: Configure Leaf BGP
   eos_config:
-    src: underlay_bgp.j2
-    provider: "{{ eos_api }}"
+          src: underlay_bgp.j2
+          provider: "{{ eos_api }}"
+
+- name: Create VLANs
+  eos_config:
+          src: vlans.j2
+          provider: "{{ eos_api }}"
+
+- name: Assign L2 Interfaces to VLAN
+  eos_config:
+          src: l2_int.j2
+          provider: "{{ eos_api }}"

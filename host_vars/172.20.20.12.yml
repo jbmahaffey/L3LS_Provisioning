@@ -1,21 +1,21 @@
 lo_interfaces:
-  - name: Loopback0
-    description: BGP RID
-    address: 172.16.2.1/32
+        - name: Loopback0
+          description: BGP RID
+          address: 172.16.2.1/32
 
 ip_interfaces:
-  - name: eth1
-    type: no switchport
-    description: to-spine-1
-    address: 10.13.56.1/31
-    mtu: 9000
-    status: no shutdown
-  - name: eth2
-    type: no switchport
-    description: to-spine-2
-    address: 10.13.57.1/31
-    mtu: 9000
-    status: no shutdown
+        - name: eth1
+          type: no switchport
+          description: to-spine-1
+          address: 10.13.56.1/31
+          mtu: 9000
+          status: no shutdown
+        - name: eth2
+          type: no switchport
+          description: to-spine-2
+          address: 10.13.57.1/31
+          mtu: 9000
+          status: no shutdown
 
 bgp:
           local_as: 65001
@@ -24,6 +24,11 @@ bgp:
                   - 10.13.57.0
                   - 10.13.56.0
                   
+l2_interfaces:
+        - name: eth3
+          description: host1
+          vlan: 30
+
 
 
 
