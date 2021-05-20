@@ -30,3 +30,9 @@
   eos_config:
           src: l2_int.j2
           provider: "{{ eos_api }}"
+
+- name: Configure VXLAN
+  eos_config:
+          src: vxlan.j2
+          provider: "{{ eos_api }}"
+

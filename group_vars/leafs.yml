@@ -1,6 +1,11 @@
 vlans:
         - vlanid: 30
           name: web
+          vni: 10030
         - vlanid: 40
           name: database
+          vni: 10040
 
+vxlan:
+        - name: vxlan1
+          source: loopback0
