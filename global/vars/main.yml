@@ -1,0 +1,14 @@
+---
+# vars file for leaf
+#
+#
+eos_api:
+  host: '{{ inventory_hostname }}'
+  username: jbmahaffey
+  password: M@h@ffey87
+  authorize: true
+  use_ssl: yes
+  transport: eapi
+  validate_certs: false
+
+

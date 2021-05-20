@@ -1,0 +1,13 @@
+---
+# tasks file for spine
+#
+#
+- name: Configure IP interfaces
+  eos_config:
+    src: ip_int.yml
+    provider: "{{ eos_api }}"
+
+- name: Configure BGP Underlay
+  eos_config:
+    src: underlay_bgp.j2
+    provider: "{{ eos_api }}"

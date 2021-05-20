@@ -1,0 +1,3 @@
+- import_playbook: global.yml
+- import_playbook: leaf_provision.yml
+- import_playbook: spine_provision.yml

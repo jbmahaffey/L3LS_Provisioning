@@ -1,0 +1,13 @@
+router bgp {{ bgp.local_as }}
+   maximum-paths 2
+   router-id {{ bgp.router_id }}
+   maximum-paths 4 ecmp 4
+   {% for spine in bgp.spines %}
+   neighbor {{ spine }} remote-as 65000
+   {% endfor %}
+   redistribute connected
+
+address-family ipv4
+      {% for spine in bgp.spines %}
+      neighbor {{ spine }} activate
+      {% endfor %}

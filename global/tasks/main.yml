@@ -1,0 +1,8 @@
+---
+# tasks file for global
+#
+#
+- name: Configure routing
+  eos_config:
+          src: routing.j2
+          provider: "{{ eos_api }}"

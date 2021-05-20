@@ -1,0 +1,13 @@
+router bgp {{ bgp.local_as }}
+   maximum-paths 2
+   router-id {{ bgp.router_id }}
+   maximum-paths 4 ecmp 4
+   {% for leaf in bgp.leafs %}
+   neighbor {{ leaf }} remote-as 6500{{ loop.index }}
+   {% endfor %}
+   redistribute connected
+
+address-family ipv4
+      {% for leaf in bgp.leafs %}
+      neighbor {{ leaf }} activate
+      {% endfor %}

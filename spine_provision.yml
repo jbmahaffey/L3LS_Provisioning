@@ -1,0 +1,5 @@
+- hosts: spines
+  gather_facts: no
+  connection: local
+  roles:
+  - role: spine

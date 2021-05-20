@@ -1,0 +1,34 @@
+ip_interfaces:
+        - name: eth1
+          description: to-leaf1
+          type: no switchport
+          address: 10.13.57.0/31
+          mtu: 9000
+          status: no shutdown
+        - name: eth2
+          description: to-leaf2
+          type: no switchport
+          address: 10.13.57.2/31
+          mtu: 9000
+          status: no shutdown
+        - name: eth3
+          description: to-leaf3
+          type: no switchport
+          address: 10.13.57.4/31
+          mtu: 9000
+          status: no shutdown
+
+lo_interfaces:
+        - name: loopback0
+          description: BGP Peering
+          address: 172.16.1.2/32
+
+bgp:
+          local_as: 65000
+          router_id: 172.16.1.2
+          leafs:
+                  - 10.13.57.1
+                  - 10.13.57.3
+                  - 10.13.57.5
+
+

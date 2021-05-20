@@ -1,0 +1,11 @@
+router bgp {{ bgp.local_as }}
+   maximum-paths 2
+   neighbor 10.10.10.1 remote-as 101
+   neighbor 10.10.11.1 remote-as 102
+   neighbor 10.10.12.1 remote-as 103
+   redistribute connected
+address-family ipv4
+   neighbor 10.10.10.1 activate
+   neighbor 10.10.11.1 activate
+   neighbor 10.10.12.1 activate
+
