@@ -1,7 +1,7 @@
 lo_interfaces:
         - name: Loopback0
           description: BGP RID
-          address: 172.16.2.2/32
+          address: 172.16.2.2
 
 
 ip_interfaces:

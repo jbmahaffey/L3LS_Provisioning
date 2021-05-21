@@ -1,0 +1,9 @@
+router bgp {{ bgp.local_as }}
+{% for vrf in vlans %}
+   vrf {{ vrf.customer }}
+{% endfor %}
+     {% for customer in vlans %} 
+     route-target import evpn {{ loop.index }}:{{ customer.vni }} 
+     route-target export evpn {{ loop.index }}:{{ customer.vni }} 
+     {% endfor %}
+      redistribute connected

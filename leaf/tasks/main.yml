@@ -50,3 +50,8 @@
   eos_config:
           src: evpn_l3.j2
           provider: "{{ eos_api }}"
+
+- name: Configure BGP EVPN
+  eos_config:
+          src: bgp_evpn.j2
+          provider: "{{ eos_api }}"

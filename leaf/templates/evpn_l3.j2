@@ -1,0 +1,17 @@
+{% for cust in vlans %}
+vrf instance {{ cust.customer }}
+
+ip routing vrf {{ cust.customer }}
+{% endfor %}
+
+{% for vlan in vlans %}
+interface Vlan{{ vlan.vlanid }}
+   vrf {{ vlan.customer }}
+   ip address virtual {{ vlan.l3 }} {{ vlan.mask }}
+{% endfor %}
+
+interface Vxlan1
+   {% for vlan in vlans %}
+   vxlan vrf {{ vlan.customer }} vni {{ vlan.l3vni }}
+   {% endfor %}
+

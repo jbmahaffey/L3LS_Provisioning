@@ -1,0 +1,12 @@
+router bgp {{ bgp.local_as }}
+   neighbor evpn peer group
+   neighbor evpn update-source loopback0
+   neighbor evpn send-community extended
+   neighbor evpn ebgp-multihop
+   {% for overlay in bgp.spine_lo %}
+   neighbor {{ overlay }} peer group evpn
+   neighbor {{ overlay }} remote-as 65000
+   {% endfor %}
+   !
+   address-family evpn
+      neighbor evpn activate

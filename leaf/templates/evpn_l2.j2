@@ -1,0 +1,7 @@
+router bgp {{ bgp.local_as }}
+   {% for vlan in vlans %}
+   vlan {{ vlan.vlanid }}
+      rd 101:{{ vlan.vni }}
+      route-target both {{ vlan.vlanid }}:{{ vlan.vni }}
+      redistribute learned
+   {% endfor %}

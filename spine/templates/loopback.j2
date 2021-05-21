@@ -1,5 +1,5 @@
 {% for intf in lo_interfaces %}
 interface {{ intf.name }}
    description {{ intf.description }}
-   ip address {{ intf.address }}/32
+   ip address {{ intf.address }}
 {% endfor %}

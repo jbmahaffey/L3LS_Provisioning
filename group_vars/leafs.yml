@@ -3,12 +3,14 @@ vlans:
           name: web
           vni: 10030
           l3: 192.168.100.1
+          l3vni: 11030
           mask: 255.255.255.0
           customer: blue
         - vlanid: 40
           name: database
           vni: 10040
           l3: 192.168.101.1
+          l3vni: 11040
           mask: 255.255.255.0
           customer: blue
 
