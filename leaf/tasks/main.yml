@@ -36,3 +36,17 @@
           src: vxlan.j2
           provider: "{{ eos_api }}"
 
+- name: Configure BGP Overlay
+  eos_config:
+          src: overlay_bgp.j2
+          provider: "{{ eos_api }}"
+
+- name: Configure BGP VLAN
+  eos_config:
+          src: evpn_l2.j2
+          provider: "{{ eos_api }}"
+
+- name: Configure EVPN L3
+  eos_config:
+          src: evpn_l3.j2
+          provider: "{{ eos_api }}"

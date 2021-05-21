@@ -2,9 +2,15 @@ vlans:
         - vlanid: 30
           name: web
           vni: 10030
+          l3: 192.168.100.1
+          mask: 255.255.255.0
+          customer: blue
         - vlanid: 40
           name: database
           vni: 10040
+          l3: 192.168.101.1
+          mask: 255.255.255.0
+          customer: blue
 
 vxlan:
         - name: vxlan1

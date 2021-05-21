@@ -7,7 +7,18 @@
     src: ip_int.yml
     provider: "{{ eos_api }}"
 
+- name: Configure Loopback
+  eos_config:
+    src: loopback.j2
+    provider: "{{ eos_api }}"
+
 - name: Configure BGP Underlay
   eos_config:
     src: underlay_bgp.j2
     provider: "{{ eos_api }}"
+
+- name: Configure BGP Overlay
+  eos_config:
+    src: overlay_bgp.j2
+    provider: "{{ eos_api }}"
+

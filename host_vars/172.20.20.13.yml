@@ -24,7 +24,9 @@ bgp:
           spines:
                   - 10.13.56.2
                   - 10.13.57.2
-
+          spine_lo:
+                  - 172.16.1.1
+                  - 172.16.1.2
 
 l2_interfaces:
         - name: eth3
