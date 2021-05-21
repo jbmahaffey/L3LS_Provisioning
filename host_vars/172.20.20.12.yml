@@ -30,8 +30,4 @@ bgp:
 l2_interfaces:
         - name: eth3
           description: host1
-          vlan: 30
-
-
-
-
+          vlan: 50

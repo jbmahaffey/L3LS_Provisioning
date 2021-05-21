@@ -13,6 +13,20 @@ vlans:
           l3vni: 11040
           mask: 255.255.255.0
           customer: blue
+        - vlanid: 50
+          name: app_servers
+          vni: 10050
+          l3: 192.168.102.1
+          l3vni: 11050
+          mask: 255.255.255.0
+          customer: blue
+        - vlanid: 100
+          name: security
+          vni: 10100
+          l3: 172.16.16.1
+          l3vni: 11100
+          mask: 255.255.255.0
+          customer: blue
 
 vxlan:
         - name: vxlan1

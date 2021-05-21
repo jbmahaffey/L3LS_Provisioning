@@ -6,7 +6,7 @@
           src: ntp.j2
           provider: "{{ eos_api }}"
 
-- name: Configure loopback 
+- name: Configure loopback
   eos_config:
           src: loopback.j2
           provider: "{{ eos_api }}"
