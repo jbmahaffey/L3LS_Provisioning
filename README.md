@@ -14,6 +14,8 @@ Currently using ansible vault and the file group_vars/all.yml will need to be de
     * transport: eapi
     * validate_certs: false
 
+Once you have created this file for your environment I would recommend using a vault to encrypt your credentials. 
+
 All tasks and templates for leafs are located under the leafs directory.
 All tasks and templates for spines are located under the spines directory.
 All tasks and templates for global are located under the global directory.
